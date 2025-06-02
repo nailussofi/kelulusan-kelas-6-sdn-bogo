@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pengumuman Kelulusan SDN BOGO</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; text-align: center; }
+    input { padding: 10px; font-size: 16px; width: 250px; }
+    button { padding: 10px 20px; font-size: 16px; }
+    .result { margin-top: 20px; font-size: 18px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>Pengumuman Kelulusan Siswa</h2>
+  <p>SDN BOGO, Desa Bogo, Kec. Kapas, Kab. Bojonegoro</p>
+  
+  <input type="text" id="nisnInput" placeholder="Masukkan NISN" />
+  <button onclick="cekKelulusan()">Cek Kelulusan</button>
+
+  <div class="result" id="hasil"></div>
+
+  <script>
+    const dataKelulusan = {
+      "0134721660": "AHMAD BAGAS SURYA PRATAMA",
+      "0134485684": "Ahmad Faizal Aryo Nugroho",
+      "0127198657": "Ahmad Rakha Abyantara",
+      "0121087097": "Arjun Ipungkas Suwiknyo",
+      "0133908762": "Athar Fadhillah Mawla Sakha",
+      "0122261417": "Audi Leonora Stevani",
+      "0128705473": "Delvia Sephina Putri",
+      "3124269908": "Dimas Anggara",
+      "0127514513": "Elva Kyla Zaneta",
+      "0125908261": "Galuh Wijayanti",
+      "0129621045": "Gisailla Sahira Blanskya",
+      "0124315845": "M. Farid Naufan Azmy",
+      "0127421223": "M. Rendi Rahmatullah",
+      "0124250775": "M. REZA ADITYA NUR HADANI",
+      "0123257859": "Moch. Islaqul Munif",
+      "0129063920": "Mu'aadzatun Yaafi' Waafiyah",
+      "0121056302": "Muchammad Arif Surya Bahaswan",
+      "0136332471": "Muhamad Pandu Rifai Putra",
+      "0124183893": "Nasya Janeta Setia",
+      "0125496781": "Neysa Amira Ainun Mahya",
+      "0126603184": "Nola Hesti Anggraeni",
+      "0126441004": "Rafa Mahardika Alfarizi",
+      "0128093847": "Raisha Qairina Batrisya",
+      "3125997892": "Risky Putra Kurniawan",
+      "0126445812": "Sefya Rahma Dewi",
+      "0122931818": "Silva Khansa Shatara",
+      "0134762446": "SULTAN RIZKI PRATAMA",
+      "0121567132": "Widya Adelia Ramadani",
+      "0126453298": "Yulian Sesilia Pertiwi"
+    };
+
+    function cekKelulusan() {
+      const nisn = document.getElementById("nisnInput").value.trim();
+      const hasil = document.getElementById("hasil");
+
+      if (dataKelulusan[nisn]) {
+        hasil.innerHTML = `Nama: <strong>${dataKelulusan[nisn]}</strong><br>Status: <span style="color: green;">LULUS</span>`;
+      } else {
+        hasil.innerHTML = `<span style="color: red;">NISN tidak ditemukan atau tidak terdaftar.</span>`;
+      }
+    }
+  </script>
+</body>
+</html>
+
